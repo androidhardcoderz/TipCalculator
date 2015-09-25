@@ -1,0 +1,242 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
+    android:layout_height="match_parent" android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    tools:context=".TipCalculatorActivityFragment"
+    android:id="@+id/mainRelativeLayout"
+    android:background="@drawable/unnamed">
+
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:padding="7dp"
+        android:layout_margin="7dp"
+        android:id="@+id/mainLinearLayout"
+        android:weightSum="1"
+        android:background="@drawable/rounded_corners">
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/rounded_corners"
+            android:paddingTop="5dp"
+            android:paddingBottom="5dp"
+            android:layout_marginTop="5dp"
+            android:layout_marginBottom="5dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:text="Enter Bill Amount"
+                android:id="@+id/enterBillAmountTitleTextView"
+                android:gravity="center_vertical|center_horizontal"
+                android:layout_alignRight="@+id/amountEditText"
+                android:layout_alignEnd="@+id/amountEditText"
+                android:layout_toLeftOf="@+id/amountEditText"
+                android:layout_alignLeft="@+id/amountEditText"
+                android:layout_alignStart="@+id/amountEditText"
+                android:textColor="@android:color/black"
+                android:background="#6DFFFFFF"
+                android:layout_gravity="center_horizontal" />
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="numberSigned"
+                android:ems="10"
+                android:id="@+id/amountEditText"
+                android:gravity="center_vertical|center_horizontal"
+                android:textColorHint="#0000FF"
+                android:layout_centerHorizontal="true"
+                android:textAppearance="@style/TextAppearance.AppCompat.Large"
+                android:textColor="@android:color/black"
+                android:layout_weight="1"
+                android:background="#6DFFFFFF" />
+
+        </LinearLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/rounded_corners"
+            android:padding="5dp">
+
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/linearLayout"
+                android:background="@drawable/rounded_corners"
+                android:paddingTop="5dp"
+                android:paddingBottom="5dp"
+                android:layout_marginTop="5dp"
+                android:layout_marginBottom="5dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textAppearance="?android:attr/textAppearanceLarge"
+                    android:text="Select Tip Percentage"
+                    android:id="@+id/PercentageTitleTextView"
+                    android:gravity="center_vertical|center_horizontal"
+                    android:textColor="@android:color/black"
+                    android:layout_below="@+id/amountEditText"
+                    android:layout_alignParentLeft="true"
+                    android:layout_alignParentStart="true"
+                    android:layout_alignRight="@+id/myseekbar"
+                    android:layout_alignEnd="@+id/myseekbar"
+                    android:background="#6DFFFFFF"
+                    android:layout_gravity="center_horizontal" />
+
+                <com.tipcalculator.app.CustomSeekBar
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/myseekbar"
+                    android:max="99"
+                    android:layout_below="@+id/PercentageTitleTextView"
+                    android:layout_alignParentRight="true"
+                    android:layout_alignParentEnd="true"
+                    android:background="#6DFFFFFF" />
+            </LinearLayout>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:text="100%"
+                android:id="@+id/selectedPercentageTextView"
+                android:gravity="center_vertical|right"
+                android:layout_alignParentLeft="false"
+                android:layout_alignParentRight="true"
+                android:layout_alignParentTop="true"
+                android:layout_alignBottom="@+id/linearLayout"
+                android:textColor="@android:color/black"
+                android:textStyle="bold|italic" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/peopleRelativeLayout"
+            android:background="@drawable/rounded_corners"
+            android:padding="5dp">
+
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/rounded_corners"
+                android:weightSum="1"
+                android:layout_marginTop="5dp"
+                android:layout_marginBottom="5dp"
+                android:id="@+id/linearLayout2">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:textAppearance="?android:attr/textAppearanceLarge"
+                    android:text="Select # Of Guests"
+                    android:id="@+id/peopleTitleTextView"
+                    android:gravity="center_vertical|center_horizontal"
+                    android:textColor="@android:color/black"
+                    android:layout_alignBottom="@+id/peopleSeekBar"
+                    android:layout_alignParentLeft="true"
+                    android:layout_alignParentStart="true"
+                    android:layout_alignRight="@+id/peopleSeekBar"
+                    android:layout_alignEnd="@+id/peopleSeekBar"
+                    android:layout_weight="1"
+                    android:background="#6DFFFFFF"
+                    android:layout_gravity="center_horizontal" />
+
+                <com.tipcalculator.app.CustomSeekBarPeople
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/peopleSeekBar"
+                    android:max="10"
+                    android:progress="1"
+                    android:layout_below="@+id/myseekbar"
+                    android:layout_alignParentLeft="true"
+                    android:layout_alignParentStart="true"
+                    android:indeterminate="false"
+                    android:background="#6DFFFFFF" />
+
+            </LinearLayout>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:text="1"
+                android:id="@+id/selectedPeopleTextView"
+                android:layout_alignParentLeft="false"
+                android:layout_alignParentTop="true"
+                android:textColor="@android:color/black"
+                android:layout_alignBottom="@+id/linearLayout2"
+                android:layout_alignParentRight="true"
+                android:layout_alignParentEnd="true"
+                android:gravity="center_vertical|right"
+                android:textStyle="bold|italic" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="205dp"
+            android:id="@+id/tipTextViewRelativeLayout"
+            android:padding="5dp"
+            android:layout_weight="0.44">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:text="$.$$"
+                android:id="@+id/tipAmountTextView"
+                android:gravity="top|center_vertical|center_horizontal"
+                android:background="#6dFFFFFF"
+                android:layout_gravity="center"
+                android:layout_alignLeft="@+id/amountEditText"
+                android:layout_alignStart="@+id/amountEditText"
+                android:layout_alignRight="@+id/amountEditText"
+                android:layout_alignEnd="@+id/amountEditText"
+                android:layout_alignParentBottom="true"
+                android:layout_below="@+id/tipButton"
+                android:textColor="@android:color/black"
+                android:padding="5dp"
+                android:textStyle="bold" />
+
+        </RelativeLayout>
+
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Calculate Tip"
+            android:id="@+id/tipButton"
+            android:textColor="@android:color/black"
+            android:layout_below="@+id/peopleSeekBar"
+            android:layout_alignLeft="@+id/tipAmountTextView"
+            android:layout_alignStart="@+id/tipAmountTextView"
+            android:layout_alignRight="@+id/tipAmountTextView"
+            android:layout_alignEnd="@+id/tipAmountTextView"
+            android:paddingTop="7dp"
+            android:paddingBottom="7dp"
+            android:padding="5dp"
+            android:background="#60BCD3" />
+
+    </LinearLayout>
+
+    <android.support.design.widget.CoordinatorLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/snackbarPosition"
+        android:layout_alignBottom="@+id/mainLinearLayout"
+        android:layout_centerHorizontal="true">
+    </android.support.design.widget.CoordinatorLayout>
+
+</RelativeLayout>
